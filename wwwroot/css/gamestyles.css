@@ -109,59 +109,38 @@ i {
   margin-right: 5px;
 }
 
-/* button {
-  background-color: #FF5000;
-  border: none;
-  border-radius: 5px;
-}
-
-button:hover {
-  opacity: 0.6;
-}
-
-button a{
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 30px;
-  text-align: center;
-  vertical-align: center;
-  color: white;
-}
-
-button a:hover{
-  text-decoration: none;
-  color: white;
-} */
-
-button{
-    font-family: "proxima-nova", sans-serif;
+.hero-text button{
+    font-weight: 500;
     font-size: 30px;
-    text-transform: uppercase;
+    text-transform: uppercase!important;
+    letter-spacing: 2px;
+    color: #FF5000;
+    cursor: hand;
     text-align: center;
-    border: none;
-    border-radius: 5px;
+    text-transform: capitalize;
+    border-width: 2px;
+    border-color: white;
+    border-radius: 2px;
     position: relative;
-    /* overflow: hidden!important;
+    overflow: hidden!important;
     -webkit-transition: all .3s ease-in-out;
     -moz-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
     background: transparent!important;
-    z-index:10; */
-
+    z-index:10;
 }
 
-
-button:hover{
-    border: 1px solid #071982;
-	  color: #80ffd3!important;
+.hero-text button:hover{
+    border: none;
+	  color: #FF5000;
 }
-button::before {
+.hero-text button::before {
     content: '';
     width: 0%;
     height: 100%;
     display: block;
-    background: #071982;
+    background: #FF5000;
     position: absolute;
 	  -ms-transform: skewX(-20deg);
     -webkit-transform: skewX(-20deg);
@@ -177,14 +156,14 @@ button::before {
 	   box-shadow:2px 0px 14px rgba(0,0,0,.6);
   }
 
-button::after {
+.hero-text button::after {
     content: '';
     width: 0%;
     height: 100%;
     display: block;
-    background: #80ffd3;
+    background: white;
     position: absolute;
-	-ms-transform: skewX(-20deg);
+	  -ms-transform: skewX(-20deg);
     -webkit-transform: skewX(-20deg);
     transform: skewX(-20deg);
     left: -10%;
@@ -194,14 +173,24 @@ button::after {
     -webkit-transition: all .94s cubic-bezier(.2,.95,.57,.99);
     -moz-transition: all .4s cubic-bezier(.2,.95,.57,.99);
     -o-transition: all .4s cubic-bezier(.2,.95,.57,.99);
-    transition: all .4s cubic-bezier(.2,.95,.57,.99);
+    transition: all .8s cubic-bezier(.2,.95,.57,.99);
     box-shadow: 2px 0px 14px rgba(0,0,0,.6);
 }
-button:hover::before, button:hover::before{
+.hero-text button:hover::before {
 	opacity:1;
 	width: 116%;
+
 }
-button:hover::after, button:hover::after{
+.hero-text button:hover::after {
 	opacity:1;
 	width: 120%;
+}
+
+.hero-text button a{
+  color: white;
+}
+
+.hero-text button a:hover {
+  text-decoration: none;
+  color: white;
 }
