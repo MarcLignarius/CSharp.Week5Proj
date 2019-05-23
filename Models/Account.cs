@@ -41,7 +41,7 @@ namespace EpicodusGames.Models
         Id = id;
         Level = level;
         TotalXp = totalXp;
-        currentLevelXp = currentLevelXp;
+        CurrentLevelXp = currentLevelXp;
         LevelBar = levelBar;
         ActiveAccount = false;
         NextLevel = Level + 1;
@@ -55,6 +55,48 @@ namespace EpicodusGames.Models
         cmd.CommandText = @"INSERT INTO account (id, account_name, email, password, level, total_xp, current_level_xp, level_bar) VALUES ('"+Id+"', '"+Accountname+"', '"+Email+"', '"+Password+"', '"+Level+"', '"+TotalXp+"', '"+CurrentLevelXp+"', '"+LevelBar+"');";
         cmd.ExecuteNonQuery();
         Id = (int) cmd.LastInsertedId;
+        conn.Close();
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
+      }
+
+      public void UpdateXp(int id)
+      {
+        MySqlConnection conn = DB.Connection();
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"UPDATE account SET total_xp = '"+TotalXp+"' WHERE id = '"+id+"';";
+        cmd.ExecuteNonQuery();
+        conn.Close();
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
+      }
+
+      public void UpdateCurrentLevelXp(int id)
+      {
+        MySqlConnection conn = DB.Connection();
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"UPDATE account SET current_level_xp = '"+CurrentLevelXp+"' WHERE id = '"+id+"';";
+        cmd.ExecuteNonQuery();
+        conn.Close();
+        if (conn != null)
+        {
+          conn.Dispose();
+        }
+      }
+
+      public void UpdateLevelBar(int id)
+      {
+        MySqlConnection conn = DB.Connection();
+        conn.Open();
+        MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+        cmd.CommandText = @"UPDATE account SET level_bar = '"+LevelBar+"' WHERE id = '"+id+"';";
+        cmd.ExecuteNonQuery();
         conn.Close();
         if (conn != null)
         {
@@ -233,7 +275,7 @@ namespace EpicodusGames.Models
         if(Level == 20)
         {
           xpUntilNextLevel = 5000;
-          if(CurrentLevelXp == xpUntilNextLevel)
+          if(CurrentLevelXp >= xpUntilNextLevel)
           {
             Level++;
             CurrentLevelXp = 0;
@@ -243,7 +285,7 @@ namespace EpicodusGames.Models
         else if(Level >= 15 )
         {
           xpUntilNextLevel = 4000;
-          if(CurrentLevelXp == xpUntilNextLevel)
+          if(CurrentLevelXp >= xpUntilNextLevel)
           {
             Level++;
             CurrentLevelXp = 0;
@@ -252,7 +294,7 @@ namespace EpicodusGames.Models
         else if(Level >= 10)
         {
           xpUntilNextLevel = 3000;
-          if(CurrentLevelXp == xpUntilNextLevel)
+          if(CurrentLevelXp >= xpUntilNextLevel)
           {
             Level++;
             CurrentLevelXp = 0;
@@ -261,7 +303,7 @@ namespace EpicodusGames.Models
         else if(Level >= 5)
         {
           xpUntilNextLevel = 2000;
-          if(CurrentLevelXp == xpUntilNextLevel)
+          if(CurrentLevelXp >= xpUntilNextLevel)
           {
             Level++;
             CurrentLevelXp = 0;
@@ -270,7 +312,7 @@ namespace EpicodusGames.Models
         else if(Level >= 1)
         {
           xpUntilNextLevel = 1000;
-          if(CurrentLevelXp == xpUntilNextLevel)
+          if(CurrentLevelXp >= xpUntilNextLevel)
           {
             Level++;
             CurrentLevelXp = 0;
@@ -278,16 +320,17 @@ namespace EpicodusGames.Models
         }
         if(CurrentLevelXp > 0)
         {
-          LevelBar = xpUntilNextLevel / CurrentLevelXp;
+          LevelBar = CurrentLevelXp / xpUntilNextLevel;
         }
-        else {
-          LevelBar = 0;
-        }
+        // else {
+        //   LevelBar = 0;
+        // }
       }
 
       public void AddXp()
       {
         TotalXp += 500;
+        CurrentLevelXp += 500;
         CheckLevelUp();
       }
 

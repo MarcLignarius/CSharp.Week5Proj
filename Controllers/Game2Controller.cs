@@ -20,6 +20,9 @@ namespace EpicodusGames.Controllers
     {
       Account activeAccount = Account.FindActiveAccount();
       activeAccount.AddXp();
+      activeAccount.UpdateXp(activeAccount.Id);
+      activeAccount.UpdateCurrentLevelXp(activeAccount.Id);
+      activeAccount.UpdateLevelBar(activeAccount.Id);
       return View(activeAccount);
     }
   }

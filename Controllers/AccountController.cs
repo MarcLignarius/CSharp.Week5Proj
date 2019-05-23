@@ -52,7 +52,7 @@ namespace EpicodusGames.Controllers
     public ActionResult Create(string username, string email, string password)
     {
       Account newAccount = new Account(username, email, password);
-      if(newAccount.CheckDuplicateAccountname() == false)
+      if(newAccount.CheckDuplicateAccountname() == false || newAccount.ValidatePassword() == false)
       {
         // tell screen username has been taken
         return RedirectToAction("SignUp");
