@@ -32,5 +32,11 @@ namespace EpicodusGames.Controllers
     {
         return View();
     }
+
+    [HttpGet("/about")]
+    public ActionResult About()
+    {
+        return View();
+    }
   }
 }
