@@ -23,7 +23,8 @@ namespace EpicodusGames.Controllers
     [HttpGet("/games")]
     public ActionResult Games()
     {
-      return View();
+      Account activeAccount = Account.FindActiveAccount();
+      return View(activeAccount);
     }
 
     [HttpGet("/contact")]

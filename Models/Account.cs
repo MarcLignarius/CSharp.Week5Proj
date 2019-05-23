@@ -13,13 +13,14 @@ namespace EpicodusGames.Models
       public bool ActiveAccount {get; set;}
       public int Level {get; set;}
       public int TotalXp {get; set;}
-      public float CurrentLevelXp {get; set;}
+      public int CurrentLevelXp {get; set;}
       public float LevelBar {get; set;}
+      public int NextLevel {get; set;}
 
       public Account(string accountname, string email, string password, int id = 0)
       {
         Accountname = accountname;
-        Email = email;
+        Email = email.ToLower();
         Password = password;
         Id = id;
         Level = 1;
@@ -27,12 +28,15 @@ namespace EpicodusGames.Models
         CurrentLevelXp = 0;
         LevelBar = 0;
         ActiveAccount = false;
+        NextLevel = Level + 1;
       }
+
+
 
       public Account(string accountname, string email, string password, int level, int totalXp, int currentLevelXp, float levelBar, int id = 0)
       {
         Accountname = accountname;
-        Email = email;
+        Email = email.ToLower();
         Password = password;
         Id = id;
         Level = level;
@@ -40,6 +44,7 @@ namespace EpicodusGames.Models
         currentLevelXp = currentLevelXp;
         LevelBar = levelBar;
         ActiveAccount = false;
+        NextLevel = Level + 1;
       }
 
       public void Save()
@@ -262,7 +267,7 @@ namespace EpicodusGames.Models
             CurrentLevelXp = 0;
           }
         }
-        else if(Level >= 5)
+        else if(Level >= 1)
         {
           xpUntilNextLevel = 1000;
           if(CurrentLevelXp == xpUntilNextLevel)

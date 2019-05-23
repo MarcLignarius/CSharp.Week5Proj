@@ -11,7 +11,8 @@ namespace EpicodusGames.Controllers
     [HttpGet("/game1")]
     public ActionResult Index()
     {
-      return View();
+      Account activeAccount = Account.FindActiveAccount();
+      return View(activeAccount);
     }
 
     [HttpGet("/play1")]
@@ -19,7 +20,7 @@ namespace EpicodusGames.Controllers
     {
       Account activeAccount = Account.FindActiveAccount();
       activeAccount.AddXp();
-      return View();
+      return View(activeAccount);
     }
   }
 }

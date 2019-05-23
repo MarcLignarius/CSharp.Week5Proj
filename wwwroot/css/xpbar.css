@@ -1,0 +1,203 @@
+@import url(https://fonts.googleapis.com/css?family=Play);
+
+body{
+  user-select:none;
+  -webkit-user-select:none;
+  cursor:default;
+}
+
+#account-bar-wrapper{
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100px;
+  background:#000;
+}
+
+#account-bar{
+  color: white;
+  max-width:966px;
+  height:100%;
+  margin:0px auto;
+}
+
+#account-bar-name{
+  font-size:30px;
+  margin:15px 15px 0px 15px;
+  display:inline-block;
+  vertical-align:bottom;
+}
+
+#account-bar-level{
+  font-size:30px;
+  display:inline-block;
+  margin:15px 15px 0px 15px;
+}
+
+#account-bar-next-level{
+  display:inline-block;
+  font-size:25px;
+}
+
+#xp-bar{
+  height:10px;
+  width:75%;
+  background:#035;
+  margin:0px 0px 0px 15px;
+  display:inline-block;
+  vertical-align:middle;
+}
+
+#xp-bar-fill0{
+  height:100%;
+  width: .05%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-bar-fill1{
+  height:100%;
+  width:10%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-bar-fill2{
+  height:100%;
+  width:20%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-bar-fill3{
+  height:100%;
+  width:30%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-bar-fill4{
+  height:100%;
+  width:40%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-bar-fill5{
+  height:100%;
+  width:50%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-bar-fill6{
+  height:100%;
+  width:60%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-bar-fill7{
+  height:100%;
+  width:70%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-bar-fill8{
+  height:100%;
+  width:80%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-bar-fill9{
+  height:100%;
+  width:90%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#xp-bar-fill10{
+  height:100%;
+  width:100%;
+  background:#3af;
+  font-size:12px;
+  line-height:10px;
+  text-align:right;
+}
+
+#doit-btn{
+  margin:100px 0px 0px 0px;
+}
+
+.btn{
+  display:inline-block;
+  padding:5px;
+  height:25px;
+  background:#000;
+  cursor:pointer;
+}
+
+#xp-increase-fx{
+  position:relative;
+  display:none;
+  height:100%;
+}
+
+.xp-increase-glow1{
+  position:absolute;
+  margin:0px 0px 0px -2px;
+  left:0px;
+  top:0px;
+  background:#fff;
+  width:5px;
+  height:100%;
+  border-radius:0px;
+  -webkit-filter:blur(2px);
+}
+
+.xp-increase-glow2{
+  position:absolute;
+  margin:-5px 0px 0px -2px;
+  left:0px;
+  top:0px;
+  background:#aaf;
+  width:5px;
+  height:200%;
+  border-radius:0px;
+  -webkit-filter:blur(10px);
+}
+
+.xp-increase-glow3{
+  position:absolute;
+  margin:0px 0px 0px -5px;
+  left:0px;
+  top:0px;
+  background:#fff;
+  width:10px;
+  height:100%;
+  border-radius:5px;
+  -webkit-filter:blur(5px);
+}

@@ -10,15 +10,16 @@ namespace EpicodusGames.Controllers
     [HttpGet("/game3")]
     public ActionResult Index()
     {
-      return View();
+      Account activeAccount = Account.FindActiveAccount();
+      return View(activeAccount);
     }
 
     [HttpGet("/play3")]
     public ActionResult Play()
     {
-      // Account activeAccount = Account.FindActiveAccount();
-      // activeAccount.AddXp();
-      return View();
+      Account activeAccount = Account.FindActiveAccount();
+      activeAccount.AddXp();
+      return View(activeAccount);
     }
 
 

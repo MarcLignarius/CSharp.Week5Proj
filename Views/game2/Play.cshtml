@@ -14,11 +14,56 @@
     <script src="~/jsSpace/SceneMain.js" asp-append-version="true"></script>
     <script src="~/jsSpace/SceneGameOver.js" asp-append-version="true"></script>
     <script src="~/jsSpace/game.js" asp-append-version="true"></script>
-
+    <link rel="stylesheet" href="/css/xpbar.css">
 
 
 </head>
 <body>
-
+  <div id='account-bar-wrapper'>
+    <div id='account-bar'>
+      <div id='account-bar-name'>@Model.Accountname</div>
+      <div id='account-bar-level'>Level @Model.Level</div>
+      <div id='xp-bar'>
+        @{
+          if(Model.LevelBar * 10 >= 10){
+            <div id='xp-bar-fill10'></div>
+          }
+          else if (Model.LevelBar * 10 >= 9){
+            <div id='xp-bar-fill9'></div>
+          }
+          else if (Model.LevelBar * 10 >= 8){
+            <div id='xp-bar-fill8'></div>
+          }
+          else if (Model.LevelBar * 10 >= 7){
+            <div id='xp-bar-fill7'></div>
+          }
+          else if (Model.LevelBar * 10 >= 6){
+            <div id='xp-bar-fill6'></div>
+          }
+          else if (Model.LevelBar * 10 >= 5){
+            <div id='xp-bar-fill5'></div>
+          }
+          else if (Model.LevelBar * 10 >= 4){
+            <div id='xp-bar-fill4'></div>
+          }
+          else if (Model.LevelBar * 10 >= 3){
+            <div id='xp-bar-fill3'></div>
+          }
+          else if (Model.LevelBar * 10 >= 2){
+            <div id='xp-bar-fill2'></div>
+            }else if (Model.LevelBar * 10 >= 1){
+              <div id='xp-bar-fill1'></div>
+            }
+            else{
+              <div id='xp-bar-fill0'></div>
+            }
+          }
+          @* <div id='xp-bar-fill4'></div> *@
+          <div id='xp-increase-fx'><div id='xp-increase-fx-flicker'><div class='xp-increase-glow1'></div><div class='xp-increase-glow2'></div><div class='xp-increase-glow3'></div></div><div class='xp-increase-glow2'></div>
+        </div>
+      </div>
+      <div id='account-bar-next-level'>@Model.NextLevel</div>
+    </div>
+  </div>
 </body>
 </html>
